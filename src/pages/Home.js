@@ -32,12 +32,39 @@ const coursesData = [
   },
 ];
 
+const teachersData = [
+  {
+    id: 1,
+    name: 'Rahul Sir',
+    image: 'https://picsum.photos/100',
+    bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed egestas, est a tincidunt sollicitudin, velit velit pellentesque ex, vel ultrices purus nunc vel erat.',
+    coursesTaught: ['Mathematics', 'Accounts', 'Tally', 'Computer'],
+    experience: '5 years',
+  },
+  {
+    id: 2,
+    name: 'Abhishek Sir',
+    image: 'https://picsum.photos/100',
+    bio: 'Nullam eu tellus ut justo ullamcorper elementum. In non maximus arcu. Suspendisse ac eleifend erat. Nullam fringilla, libero a congue euismod, velit nunc viverra felis.',
+    coursesTaught: ['Biology', 'Chemistry'],
+    experience: '3 years',
+  },
+  {
+    id: 3,
+    name: 'Sumit Sir',
+    image: 'https://picsum.photos/100',
+    bio: 'Aenean feugiat justo id enim tincidunt, quis vulputate mi blandit. Proin sed augue eu elit consectetur feugiat. Donec eget malesuada urna, vel blandit purus.',
+    coursesTaught: ['English', 'Literature'],
+    experience: '7 years',
+  },
+];
+
   return (
     <div>
       {/* Hero Section Web */}
-      <section className="py-12 flex-col md:flex-row items-center hidden lg:flex"> {/* Add items-center for horizontal alignment */}
+      <section className="py-12 flex-col md:flex-row items-center hidden lg:flex">
         {/* Text Content */}
-        <div className="flex-1 px-8 md:px-12 lg:px-16 flex flex-col justify-center"> {/* Add flex-1 class for equal proportions */}
+        <div className="flex-1 px-8 md:px-12 lg:px-16 flex flex-col justify-center">
           <h1 className="text-4xl font-bold mb-4">Welcome to Bict Academy</h1>
           <p className="text-lg mb-3">Journey to Excellence: Empowering Minds, Shaping Futures</p>
           <p className="text-lg mb-6">Since 1999, Bict Academy has been a beacon of trust and knowledge, offering an exceptional educational experience where students can unlock their potential and stand out from the crowd.</p>
@@ -99,8 +126,53 @@ const coursesData = [
       </div>
 
       {/* View All Button (Visible in Mobile View) */}
-      <div className="container mx-auto mt-8 md:hidden flex justify-center"> {/* Center align horizontally */}
+      <div className="container mx-auto mt-8 md:hidden flex justify-center">
         <Link to="/courses" className="bg-blue-500 text-white py-2 px-6 rounded-md font-semibold shadow-md hover:bg-blue-600">
+          View All
+        </Link>
+      </div>
+    </section>
+
+    {/* Our Teachers Section */}
+    <section className="py-12">
+      <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
+        {/* Our Courses Heading */}
+        <h2 className="text-4xl font-bold mb-8 md:mb-0">Our Teachers</h2>
+
+        {/* View All Button (Visible in Desktop View) */}
+        <Link to="/teachers" className="bg-blue-500 text-white py-2 px-6 rounded-md font-semibold shadow-md hover:bg-blue-600 hidden md:block">
+          View All
+        </Link>
+      </div>
+
+      <div className="container mx-auto mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          {teachersData.map((teacher) => (
+            <div key={teacher.id} className="bg-white rounded-lg shadow-md p-4 md:p-6">
+            <div className="flex items-center mb-6">
+              <img
+                src={teacher.image}
+                alt={teacher.name}
+                className="w-16 h-16 object-cover rounded-full mr-4"
+              />
+              <div>
+                  <h3 className="text-xl font-semibold">{teacher.name}</h3>
+                  <p className="text-gray-600">
+                    <span className="font-bold">Experience:</span> {teacher.experience}
+                  </p>
+                  <p className="text-gray-600">
+                    <span className="font-bold">Courses Taught:</span>{' '}
+                    {teacher.coursesTaught.join(', ')}
+                  </p>
+                </div>
+            </div>
+            <p className="text-gray-600 mb-4">{teacher.bio}</p>
+          </div>
+          ))}
+        </div>
+
+      {/* View All Button (Visible in Mobile View) */}
+      <div className="container mx-auto mt-8 md:hidden flex justify-center">
+        <Link to="/teachers" className="bg-blue-500 text-white py-2 px-6 rounded-md font-semibold shadow-md hover:bg-blue-600">
           View All
         </Link>
       </div>
