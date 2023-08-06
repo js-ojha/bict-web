@@ -2,6 +2,8 @@ import React from 'react'
 import heroImage from '../assets/hero_study2.jpg';
 import { Link } from 'react-router-dom';
 import Colors from '../utils/ColorUtils';
+import CourseCard from '../components/CourseCard';
+import TeacherCard from '../components/TeacherCard';
 
 const Home = () => {
 
@@ -110,22 +112,7 @@ const Home = () => {
         <div className="container mx-auto mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {/* Courses List */}
           {coursesData.map((course) => (
-            <div key={course.id} className="bg-white rounded-lg shadow-md p-4 md:p-6 m-4 md:m-0" style={{backgroundColor: Colors.offWhite}}>
-              <img src={course.image} alt={course.title} className="w-full h-32 object-cover rounded-md mb-4" />
-              <h3 className="text-xl font-semibold mb-2">{course.title}</h3>
-              <p className="text-gray-600">{course.description}</p>
-              <p className="text-gray-600">
-                <strong>Duration:</strong> {course.duration}
-              </p>
-              <p className="text-gray-600">
-                <strong>Taught By:</strong> {course.teacher}
-              </p>
-              <div className="mt-4 flex justify-start">
-                <Link to={`/courses/${course.id}`} className="bg-blue-50 text-blue-500 py-2 px-6 rounded-md font-semibold shadow-md hover:bg-blue-100">
-                  Learn More
-                </Link>
-              </div>
-            </div>
+            <CourseCard key={course.id} course={course} />
           ))}
         </div>
 
@@ -157,26 +144,7 @@ const Home = () => {
 
         <div className="container mx-auto mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {teachersData.map((teacher) => (
-            <div key={teacher.id} className="bg-white rounded-lg shadow-md p-4 md:p-6" style={{backgroundColor: Colors.offWhite}}>
-              <div className="flex items-center mb-6">
-                <img
-                  src={teacher.image}
-                  alt={teacher.name}
-                  className="w-16 h-16 object-cover rounded-full mr-4"
-                />
-                <div>
-                  <h3 className="text-xl font-semibold">{teacher.name}</h3>
-                  <p className="text-gray-600">
-                    <span className="font-bold">Experience:</span> {teacher.experience}
-                  </p>
-                  <p className="text-gray-600">
-                    <span className="font-bold">Courses Taught:</span>{' '}
-                    {teacher.coursesTaught.join(', ')}
-                  </p>
-                </div>
-              </div>
-              <p className="text-gray-600 mb-4">{teacher.bio}</p>
-            </div>
+            <TeacherCard key={teacher.id} teacher={teacher} />
           ))}
         </div>
 
