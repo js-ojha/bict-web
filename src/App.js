@@ -7,6 +7,7 @@ import Courses from './pages/Courses'
 import Teachers from './pages/Teachers'
 
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path='/teachers' element={<Teachers />} />
           <Route path="/*" element={<Navigate to='/' />} />
         </Routes>
+        <Footer />
       </Router>
     </div>
   );
