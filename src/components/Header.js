@@ -24,13 +24,13 @@ const Header = () => {
         <div className="flex items-center space-x-16 sm:space-x-0">
           <div className="sm:hidden">
             {showContent ? (
-              <AiOutlineClose color={Colors.green} size={30} onClick={toggleContent} />
+              <AiOutlineClose color={Colors.blue500} size={30} onClick={toggleContent} />
             ) : (
-              <AiOutlineMenu color={Colors.green} size={30} onClick={toggleContent} />
+              <AiOutlineMenu color={Colors.blue500} size={30} onClick={toggleContent} />
             )}
           </div>
           <div className="flex items-center space-x-2">
-            <BiSolidBookHeart color={Colors.green} size={30} />
+            <BiSolidBookHeart color={Colors.blue500} size={30} />
             <h2 className={`text-xl font-bold header-link ${isActiveRoute('/') ? 'active' : ''}`}>
                 <Link to="/">Bict Academy</Link>
             </h2>
@@ -50,7 +50,7 @@ const Header = () => {
             <Link to="/teachers">Our Teachers</Link>
         </p>
         <p className="flex items-center header-link text-center sm:text-left">
-          <IoMdCall color={Colors.green} size={20} />
+          <IoMdCall color={Colors.blue500} size={20} />
           <span className="ml-1">+91 8447617797</span>
         </p>
       </div>

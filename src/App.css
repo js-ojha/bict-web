@@ -13,7 +13,7 @@
 }
 
 .header-link:hover {
-  color: #4EAAA4;
+  color: rgb(59 130 246);
 }
 
 .header-link::before {
@@ -24,7 +24,7 @@
   height: 2px;
   bottom: -4px; /* Add space between text and underline */
   left: 0;
-  background-color: #4EAAA4;
+  background-color: rgb(59 130 246);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.4s ease, width 0.4s ease-out;
@@ -38,6 +38,6 @@
 }
 
 .header-link.active {
-  color: #4eaaa4;
+  color: rgb(59 130 246);
   pointer-events: none;
 }
