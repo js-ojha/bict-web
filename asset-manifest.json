@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/bict-web/static/css/main.282061b4.css",
+    "main.js": "/bict-web/static/js/main.5d008ba4.js",
+    "static/js/787.6cb2ac74.chunk.js": "/bict-web/static/js/787.6cb2ac74.chunk.js",
+    "static/media/hero_study2.jpg": "/bict-web/static/media/hero_study2.da1c61375b3ae7a22722.jpg",
+    "static/media/logo.svg": "/bict-web/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/bict-web/index.html",
+    "main.282061b4.css.map": "/bict-web/static/css/main.282061b4.css.map",
+    "main.5d008ba4.js.map": "/bict-web/static/js/main.5d008ba4.js.map",
+    "787.6cb2ac74.chunk.js.map": "/bict-web/static/js/787.6cb2ac74.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.282061b4.css",
+    "static/js/main.5d008ba4.js"
+  ]
+}
