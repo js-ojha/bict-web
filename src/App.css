@@ -31,3 +31,8 @@
   width: 100%;
   transition-delay: 0s, 0s;
 }
+
+.header-link.active {
+  color: #4eaaa4;
+  pointer-events: none;
+}
