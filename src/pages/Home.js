@@ -1,7 +1,37 @@
 import React from 'react'
 import heroImage from '../assets/hero_study2.jpg';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
+
+  // Sample data for courses
+const coursesData = [
+  {
+    id: 1,
+    title: 'Course 1',
+    description: 'This is the description of Course 1',
+    image: 'https://picsum.photos/200/300',
+    duration: '3 Months',
+    teacher: 'Rahul Sir'
+  },
+  {
+    id: 2,
+    title: 'Course 2',
+    description: 'This is the description of Course 2',
+    image: 'https://picsum.photos/200/300',
+    duration: '2 Months',
+    teacher: 'Sumit Sir'
+  },
+  {
+    id: 3,
+    title: 'Course 3',
+    description: 'This is the description of Course 3',
+    image: 'https://picsum.photos/200/300',
+    duration: '6 Months',
+    teacher: 'Rahul Sir'
+  },
+];
+
   return (
     <div>
       {/* Hero Section Web */}
@@ -33,6 +63,49 @@ const Home = () => {
           <button className="bg-blue-50 text-blue-500 py-2 px-6 rounded-md font-semibold shadow-md hover:bg-blue-100">Explore Courses</button>
         </div>
       </section>
+
+      {/* Our Courses Section */}
+      <section className="py-12">
+      <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
+        {/* Our Courses Heading */}
+        <h2 className="text-4xl font-bold mb-8 md:mb-0">Our Courses</h2>
+
+        {/* View All Button (Visible in Desktop View) */}
+        <Link to="/courses" className="bg-blue-500 text-white py-2 px-6 rounded-md font-semibold shadow-md hover:bg-blue-600 hidden md:block">
+          View All
+        </Link>
+      </div>
+
+      <div className="container mx-auto mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+        {/* Courses List */}
+        {coursesData.map((course) => (
+          <div key={course.id} className="bg-white rounded-lg shadow-md p-4 md:p-6 m-4 md:m-0">
+            <img src={course.image} alt={course.title} className="w-full h-32 object-cover rounded-md mb-4" />
+            <h3 className="text-xl font-semibold mb-2">{course.title}</h3>
+            <p className="text-gray-600">{course.description}</p>
+            <p className="text-gray-600">
+              <strong>Duration:</strong> {course.duration}
+            </p>
+            <p className="text-gray-600">
+              <strong>Taught By:</strong> {course.teacher}
+            </p>
+            <div className="mt-4 flex justify-start">
+              <Link to={`/courses/${course.id}`} className="bg-blue-500 text-white py-2 px-6 rounded-md font-semibold shadow-md hover:bg-blue-600">
+                Learn More
+              </Link>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* View All Button (Visible in Mobile View) */}
+      <div className="container mx-auto mt-8 md:hidden flex justify-center"> {/* Center align horizontally */}
+        <Link to="/courses" className="bg-blue-500 text-white py-2 px-6 rounded-md font-semibold shadow-md hover:bg-blue-600">
+          View All
+        </Link>
+      </div>
+    </section>
+
     </div>
   )
 }
